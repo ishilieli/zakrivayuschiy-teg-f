@@ -9,8 +9,8 @@
 */
 
 const likeHeartArray = document.querySelectorAll('.like-icon');
-const likeButtonArray = document.querySelectorAll('.card__like-button');
-const iconButtonArray = document.querySelectorAll('.card__icon-button');
+const likeButtonArray = document.querySelectorAll('.card-button-like');
+const iconButtonArray = document.querySelectorAll('.card-button-icon');
 
 iconButtonArray.forEach((iconButton, index) => {
   iconButton.onclick = () =>
@@ -22,19 +22,20 @@ likeButtonArray.forEach((button, index) => {
 });
 
 function toggleIsLiked(heart, button) {
+  console.log(heart);
   heart.classList.toggle('is-liked');
   setButtonText(heart, button);
 }
 
 function setButtonText(heart, button) {
-  if ([...heart.classList].includes('is-liked')) {
+  if (heart.classList.contains('is-liked')) {
     setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Unlike'),
+      () => (button.querySelector('.text').textContent = 'Unlike'),
       500
     );
   } else {
     setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Like'),
+      () => (button.querySelector('.text').textContent = 'Like'),
       500
     );
   }
