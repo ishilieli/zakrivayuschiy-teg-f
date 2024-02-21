@@ -74,7 +74,7 @@
 
 .header-logo-title {
     font-size: clamp(0.875rem, 0.7143rem + 0.8036vw, 1.4375rem);
-    font-weight: bold;
+    font-variation-settings: "wght" var(--wght-bold);
 }
 
 .theme-menu__item:not(:last-of-type) {
@@ -83,7 +83,7 @@
 
 @layer variations {
     .theme-menu__button {
-        font-weight: 400;
+        font-variation-settings: "wght" var(--wght-regular);
         line-height: 0.88rem;
         border: none;
         position: relative;
@@ -145,7 +145,7 @@
 
 .card-title {
     font-size: 1.13rem;
-    font-weight: 800;
+    font-variation-settings: "wght" var(--wght-bold);
     line-height: 1.38rem;
     padding: .25rem .625rem;
 }
@@ -208,6 +208,12 @@
     0 -1px var(--bg-color);
 }
 
+@media (width < 376px) {
+    .card-image-tag {
+        padding: 1.25rem 0.75rem;
+    }
+}
+
 @supports((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
     .card-image-tag {
         -webkit-text-stroke: 1px var(--bg-color);
@@ -218,9 +224,9 @@
 
 .card-content {
     font-size: 1.13rem;
-    font-weight: 400;
+    font-variation-settings: "wght" var(--wght-regular);
     line-height: 1.31rem;
-    padding: 1.625rem 1.625rem 1.5rem;
+    padding: 1.625rem 1.5rem 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.625rem;
@@ -339,7 +345,7 @@
     text-transform: uppercase;
     line-height: 1.5;
     font-size: 0.88rem;
-    font-weight: bold;
+    font-variation-settings: "wght" var(--wght-bold);
     color: var(--main-color);
 }
 
